@@ -11,7 +11,6 @@ function App() {
       <ProjectRoutes />
       <Footer />
     </BrowserRouter>
-
   );
 }
 

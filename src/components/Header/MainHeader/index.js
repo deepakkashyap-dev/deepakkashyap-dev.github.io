@@ -3,12 +3,12 @@ import HeaderSearch from "./headerSearch";
 import ProfileDropDown from "./profileDropdown";
 import { useSelector, useDispatch } from "react-redux";
 import { Link, useLocation } from "react-router-dom";
-import { setLoginPopupStatus } from '../../../store/actions/general';
+import { setLoginPopupStatus } from '../../../store/actions/auth';
 // import { parse } from "query-string";
 // import { get } from 'lodash';
 
 const MainHeader = (props) => {
-    const dispatch = useDispatch()
+    const dispatch = useDispatch();
     const location = useLocation();
     const { loggedUserInfo } = useSelector((state) => state.userProfile);
 

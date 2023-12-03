@@ -1,19 +1,29 @@
-//######## User Profile 
+//########## User Profile ########
 export const SET_USER_ADDRESS_INFO = "SET_USER_ADDRESS_INFO";
 export const SAVE_MY_ADDED_PRODUCT = "SAVE_MY_ADDED_PRODUCT";
+export const SET_PROFILE_BANNER_INFO = "SET_PROFILE_BANNER_INFO";
 
-
-//######## Search Item
+//########## Search Item #########
 export const SET_SEARCH_ITEM = "SET_SEARCH_ITEM";
 export const SET_SEARCH_VALUE = "SET_SEARCH_VALUE";
 export const SET_SEARCH_SELECT_VALUE = "SET_SEARCH_SELECT_VALUE";
 
-// ######### General Info 
+// ######### Auth Info ###########
 export const SET_SHOW_LOGIN_POPUP_VALUE = "SET_SHOW_LOGIN_POPUP_VALUE";
+export const SET_LOGGED_USER_INFO = "SET_LOGGED_USER_INFO";
+export const SET_LOGIN_USER_ERROR = "SET_LOGIN_USER_ERROR";
 export const SET_REDIRECT_TO_PRIVATE_ROUTE = "SET_REDIRECT_TO_PRIVATE_ROUTE";
 export const SET_REDIRECT_TO_NEXTPAGE = "SET_REDIRECT_TO_NEXTPAGE";
+export const SET_SIGNUP_USER_ERROR = "SET_SIGNUP_USER_ERROR";
 export const SET_IP_ADDRESS = "SET_IP_ADDRESS";
 export const SET_USER_LOC = "SET_USER_LOC";
+export const SAVE_NOTIFICATION_IN_STORE = "SAVE_NOTIFICATION_IN_STORE";
+export const UPDATE_NOTIFICATION_LIST = "UPDATE_NOTIFICATION_LIST";
+export const SET_NETWORK_STATUS = "SET_NETWORK_STATUS";
+
+// ######### Cart Actions ########
+export const ADD_TO_CART = "ADD_TO_CART";
+export const GET_CART = "GET_CART";
 
 // ######### Dashboard ###########
 export const SET_DASHBOARD_BLOCK_DATA = "SET_DASHBOARD_BLOCK_DATA";

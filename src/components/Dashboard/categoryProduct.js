@@ -2,7 +2,6 @@ import React, { useRef } from 'react';
 import ProductCard from '../Product/productCard';
 
 const CategoryProduct = ({ data }) => {
-    console.log(data,"data")
     return (
         <div className="arrival-costumes">
             <div className="arrival-caption">

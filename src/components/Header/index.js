@@ -3,8 +3,12 @@ import HeadLine from './headLine';
 import MainHeader from "./MainHeader";
 import { redirect } from 'react-router-dom';
 // import HeaderSearch from "./MainHeader/headerSearch";
+import { useSelector, useDispatch } from 'react-redux';
+import Auth from "../Auth";
 
 const Header = () => {
+    const { showLoginPopup } = useSelector((state) => state.authReducer);
+    console.log(showLoginPopup,"showLoginPopup")
     const redirectHomePage = () => {
         redirect("/");
     };
@@ -19,6 +23,9 @@ const Header = () => {
                 </button>
             </div>
             <HeadLine />
+            {
+                showLoginPopup && <Auth /> // to render login signup pages
+            }
             <React.Fragment>
                 {/* <Badge notificationCount={100}> */}
                 {/* Header which have search box and all -- row-1 */}
@@ -59,21 +66,6 @@ const Header = () => {
                     openLocationPopup={this.openLocationPopup}
                 // desableScrollBar={this.desableScrollBar}\
                 /> */}
-
-                {/* <div className="header-address">
-                    <div className="product-location-wraps">
-                        <div className="product-location">
-                            <div className="location-mark">
-                                <i className="fas fa-map-marker-alt"></i>
-                                Ashburn :
-                            </div>
-                            <div className="distance-mark">
-                                30 miles + Shipping
-                                <i className="fas fa-shipping-fast"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div> */}
             </React.Fragment>
 
         </header >

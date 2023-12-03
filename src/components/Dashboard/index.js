@@ -6,6 +6,7 @@ import HeroImage from './HeroImage';
 import StickyBlock from './StickyBlock';
 import CategoryProduct from './categoryProduct';
 import BrandBanner from "./BrandBanner";
+import DealProduct from './DealProduct';
 // const HeroImage = lazy(() => import('./HeroImage'));
 
 
@@ -21,14 +22,12 @@ const dynamicRender = (data, index) => {
         case block_name.HERO_IMAGE:
             return <HeroImage data={data} key={index} />;
         case block_name.CATEGORY_PROD:
-            console.log(data, "data.block_name")
-
-            if (!data.editor_pick) {
+            if (!data.is_deal) {
                 return <CategoryProduct data={data} key={index} />;
             }
-        // else {
-        //     return <EditorsPick data={data} />;
-        // }
+            else {
+                return <DealProduct data={data} key={index} />;
+            }
         case block_name.STICKY_NOTES:
             return <StickyBlock data={data} key={index} />;
         case block_name.BRAND_BANNER:
@@ -62,12 +61,14 @@ const Dashboard = () => {
     //     return <BallTriangleLoader Style={"bg-white"} />
     // }
     return (
-        <div className={"container-fluid px-3"}>
-            {
-                dashboardBlockData.length &&
-                dashboardBlockData.map((data, index) => dynamicRender(data, index))
-            }
-            {/* <div> <Banner /></div> */}
+        <div className="dashboard">
+            <div className={"container-fluid px-3"}>
+                {
+                    dashboardBlockData.length &&
+                    dashboardBlockData.map((data, index) => dynamicRender(data, index))
+                }
+                {/* <div> <Banner /></div> */}
+            </div>
         </div>
     );
 };

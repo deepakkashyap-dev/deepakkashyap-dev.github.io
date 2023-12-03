@@ -3563,7 +3563,7 @@ input:checked+.slider-round:before {
 }
 
 .dashboard {
-  background: #f2f2f2;
+  /* background: #f2f2f2; */
 }
 
 .service-box span img {
@@ -8300,7 +8300,7 @@ button.complete-purchase.disabled {
 
 .popular-costumes.seller-profile {
   background: #ffffff;
-  padding: 25px 17px 6px;
+  /* padding: 25px 17px 6px; */
 }
 
 .view-seller-wrap.seller-profile-page .container {
@@ -8320,7 +8320,8 @@ button.complete-purchase.disabled {
 }
 
 .popular-costumes.seller-profile .costume-box a .costume-info {
-  background: #eaeaea;
+  /* background: #eaeaea; */
+  background: #fff;
 }
 
 .popular-costumes.seller-profile .costume-box .costumes {
@@ -8504,6 +8505,7 @@ button.complete-purchase.disabled {
   transition: all 0.3s;
   display: flex;
   flex-direction: column;
+  box-shadow: rgb(0 0 0 / 21%) 0.5px 1.598px 6px;
 }
 
 .popular-costumes.seller-profile .costume-box a {
@@ -9606,3 +9608,78 @@ button.complete-purchase.disabled {
   padding: 3px 7px;
   border-radius: 15px;
 }
+
+/* /////////////////  Difresca ////////////////////////////////////// */
+.dash-deal-float {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-bottom: 15px;
+}
+
+.dash-deal-card {
+  width: 100%;
+  border: 2px solid #e8c71c;
+  border-radius: 5px;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.dash-deal-card h2 {
+  background: orange;
+  text-align: center;
+  color: #fff;
+}
+
+.dash-deal-card .img-div,
+.dash-deal-card .deal-price,
+.dash-deal-card .deal-name {
+  display: flex;
+  justify-content: center;
+}
+
+.dash-deal-card img {
+  width: 350px;
+  height: auto;
+}
+
+.deal-prod {
+  width: 100%;
+  padding: 0;
+  border: 1px solid #e6e6e6;
+  position: relative;
+}
+
+.image-sticky {
+  position: sticky;
+  top: 0;
+}
+
+/* ////////////////  TIMER //////////// */
+.countdown-timer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: Arial, sans-serif;
+  font-size: 24px;
+  margin: 10px 0;
+}
+
+.timer {
+  display: flex;
+  align-items: center;
+  background-color: #f0f0f0;
+  border-radius: 8px;
+  padding: 10px 20px;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.digit {
+  display: inline-block;
+  padding: 0 5px;
+  background-color: #333;
+  color: #fff;
+  border-radius: 4px;
+}
+
+/* ////////////////  TIMER //////////// */

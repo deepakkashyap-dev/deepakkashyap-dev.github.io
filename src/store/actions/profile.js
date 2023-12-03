@@ -1,9 +1,42 @@
-// import { axiosInstance } from "./../../utils/Service";
-// import { apiUrl } from "./../../utils/urlEndpoints";
+import { axiosInstance } from "../../utils/Service";
+import { apiUrl } from "../../utils/urlEndpoints";
 import {
     SET_USER_ADDRESS_INFO,
-    SAVE_MY_ADDED_PRODUCT
+    SAVE_MY_ADDED_PRODUCT,
+    SET_PROFILE_BANNER_INFO
 } from "./../actionsTypes";
+
+export const getProfileBannerInfo = (payload, callBack) => {
+    return async (dispatch) => {
+        const token = localStorage.getItem("token");
+        try {
+            const response = await axiosInstance.post(
+                apiUrl.profile.profileBannerInfo,
+                payload,
+                {
+                    headers: {
+                        Authorization: "Bearer " + token,
+                    },
+                }
+            );
+            dispatch(setProfileBannerInfo(response.data));
+            if (callBack) {
+                callBack(true);
+            }
+        } catch (e) {
+            if (callBack) {
+                callBack(true);
+            }
+        }
+    };
+};
+
+export const setProfileBannerInfo = (payload) => {
+    return {
+        type: SET_PROFILE_BANNER_INFO,
+        payload: payload,
+    };
+};
 
 
 // export const getProfileInfo = (userId) => {

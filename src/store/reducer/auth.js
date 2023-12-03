@@ -13,7 +13,7 @@ const initialState = {
     ip_address: "",
     userLocation: {}
 };
-const generalInfo = (state = initialState, action) => {
+const authReducer = (state = initialState, action) => {
     switch (action.type) {
         case SET_SHOW_LOGIN_POPUP_VALUE:
             return { ...state, showLoginPopup: action.payload };
@@ -29,4 +29,4 @@ const generalInfo = (state = initialState, action) => {
             return state;
     }
 };
-export default generalInfo;
+export default authReducer;

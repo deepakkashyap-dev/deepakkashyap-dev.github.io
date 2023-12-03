@@ -1,0 +1,22 @@
+.detail-from .group-wrap {
+    display: flex;
+    justify-content: space-between;
+    flex-flow: wrap;
+    padding: 5px 0px;
+}
+
+.detail-from .group-wrap .form-input {
+    width: 48%;
+    position: relative;
+}
+
+/*max-width: 767px  */
+@media only screen and (max-width: 767px) {
+    .detail-from .group-wrap .form-input {
+        width: 100%;
+    }
+}
+
+.form-input.login-input {
+    width: 100%;
+}

@@ -3215,74 +3215,74 @@ export const category_block = [
             { ...image_block[4], order: 3, },
         ]
     },
-    // {
-    //     order: 5,
-    //     slider: false,
-    //     block_name: block_name.CATEGORY_PROD,
-    //     blockID: 5,
-    //     title: "Best seller grocery near you",
-    //     sub_title: "We provide best quality & fresh grocery items near your location",
-    //     editor_pick: false,
-    //     is_deal: true,
-    //     deal_product: [{
-    //         "id": "deal1",
-    //         "headeing": "Deal of the Day",
-    //         "name": "Fresh Green Leaf Lettuce",
-    //         "slug": "fresh-green-leaf-lettuce",
-    //         "description": "Vegetables are parts of plants that are consumed by humans or other animals as food. the first meaning remains commonly used and is applied to plants collectively to ask all edible plant matter, including the flowers, fruits, stems, leaves, roots, and seeds. An alternate definition of the term is applied somewhat arbitrarily, often by culinary and cultural tradition. it's going to exclude foods derived from some plants that are fruits, flowers, nuts, and cereal grains, but include savoury fruits like tomatoes and courgettes, flowers like broccoli, and seeds like pulses.",
-    //         "image": {
-    //             "id": 1,
-    //             "thumbnail": "/assets/images/products/p-1.png",
-    //             "original": "/assets/images/products/p-1-m.png"
-    //         },
-    //         "gallery": [
-    //             {
-    //                 "id": 1,
-    //                 "thumbnail": "/assets/images/products/p-1-1.png",
-    //                 "original": "/assets/images/products/p-1-1.png"
-    //             },
-    //             {
-    //                 "id": 2,
-    //                 "thumbnail": "/assets/images/products/p-1-2.png",
-    //                 "original": "/assets/images/products/p-1-2.png"
-    //             },
-    //             {
-    //                 "id": 3,
-    //                 "thumbnail": "/assets/images/products/p-1-3.png",
-    //                 "original": "/assets/images/products/p-1-3.png"
-    //             }
-    //         ],
-    //         "quantity": 70,
-    //         "sold": 50,
-    //         "available": 20,
-    //         "price": 2.74,
-    //         "sale_price": 2.64,
-    //         "unit": "1 each",
-    //         "tag": [
-    //             {
-    //                 "id": 1,
-    //                 "name": "Fresh food",
-    //                 "slug": "fresh-food"
-    //             },
-    //             {
-    //                 "id": 2,
-    //                 "name": "Organic",
-    //                 "slug": "organic"
-    //             },
-    //             {
-    //                 "id": 3,
-    //                 "name": "Cilantro",
-    //                 "slug": "cilantro"
-    //             },
-    //             {
-    //                 "id": 4,
-    //                 "name": "Dry Food",
-    //                 "slug": "dry-food"
-    //             }
-    //         ]
-    //     }],
-    //     data: product_list2,
-    // },
+    {
+        order: 5,
+        slider: false,
+        block_name: block_name.CATEGORY_PROD,
+        blockID: 5,
+        title: "Best seller grocery near you",
+        sub_title: "We provide best quality & fresh grocery items near your location",
+        // editor_pick: false,
+        is_deal: true,
+        deal_product: [{
+            "id": "deal1",
+            "headeing": "Deal of the Day",
+            "name": "Fresh Green Leaf Lettuce",
+            "slug": "fresh-green-leaf-lettuce",
+            "description": "Vegetables are parts of plants that are consumed by humans or other animals as food. the first meaning remains commonly used and is applied to plants collectively to ask all edible plant matter, including the flowers, fruits, stems, leaves, roots, and seeds. An alternate definition of the term is applied somewhat arbitrarily, often by culinary and cultural tradition. it's going to exclude foods derived from some plants that are fruits, flowers, nuts, and cereal grains, but include savoury fruits like tomatoes and courgettes, flowers like broccoli, and seeds like pulses.",
+            "image": {
+                "id": 1,
+                "thumbnail": "/assets/images/products/p-1.png",
+                "original": "/assets/images/products/p-1-m.png"
+            },
+            "gallery": [
+                {
+                    "id": 1,
+                    "thumbnail": "/assets/images/products/p-1-1.png",
+                    "original": "/assets/images/products/p-1-1.png"
+                },
+                {
+                    "id": 2,
+                    "thumbnail": "/assets/images/products/p-1-2.png",
+                    "original": "/assets/images/products/p-1-2.png"
+                },
+                {
+                    "id": 3,
+                    "thumbnail": "/assets/images/products/p-1-3.png",
+                    "original": "/assets/images/products/p-1-3.png"
+                }
+            ],
+            "quantity": 70,
+            "sold": 50,
+            "available": 20,
+            "price": 2.74,
+            "sale_price": 2.64,
+            "unit": "1 each",
+            "tag": [
+                {
+                    "id": 1,
+                    "name": "Fresh food",
+                    "slug": "fresh-food"
+                },
+                {
+                    "id": 2,
+                    "name": "Organic",
+                    "slug": "organic"
+                },
+                {
+                    "id": 3,
+                    "name": "Cilantro",
+                    "slug": "cilantro"
+                },
+                {
+                    "id": 4,
+                    "name": "Dry Food",
+                    "slug": "dry-food"
+                }
+            ]
+        }],
+        prod_list: product_list2,
+    },
     // {
     //     order: 6,
     //     slider: false,
