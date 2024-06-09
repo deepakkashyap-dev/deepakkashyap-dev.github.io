@@ -13,7 +13,7 @@
 // };
 
 
-export const API_URL = 'http://localhost:3000'; //local
+export const API_URL = 'http://localhost:8000'; //local
 export const API_PREFIX = "/api/v1/";
 // export const map_api_key = "AIzaSyD67LS8acDfx3sKM5HimzFP_MQdsMM9gNk";
 

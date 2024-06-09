@@ -3295,3 +3295,44 @@ export const category_block = [
     //     data: product_list2,
     // },
 ]
+
+
+export const cartDataArray = [
+    {
+        "id": 1,
+        "cartId": 1,
+        "deletedAt": 0,
+        "outOfStock": 0,
+        "brand": "DiFresca-brand",
+        "title": "Apple ",
+        "price": 109.95,
+        "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Red_Apple.jpg/265px-Red_Apple.jpg",
+        "quantity": 3,
+        "QtyType":"Per KG"
+    },
+    {
+        "id": 2,
+        "cartId": 2,
+        "deletedAt": 0,
+        "outOfStock": 0,
+        "brand": "DiFresca-brand 2",
+        "title": "Banana",
+        "price": 78.95,
+        "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Bananas_white_background_DS.jpg/320px-Bananas_white_background_DS.jpg",
+        "quantity": 3,
+        "QtyType":"Per Dozen"
+    },
+    {
+        "id": 3,
+        "cartId": 3,
+        "deletedAt": 0,
+        "outOfStock": 0,
+        "brand": "DiFresca-brand 3",
+        "title": "graps",
+        "price": 19.95,
+        "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Table_grapes_on_white.jpg/320px-Table_grapes_on_white.jpg",
+        "quantity": 3,
+        "QtyType":"Per KG"
+    },
+
+]

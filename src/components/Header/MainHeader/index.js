@@ -10,7 +10,7 @@ import { setLoginPopupStatus } from '../../../store/actions/auth';
 const MainHeader = (props) => {
     const dispatch = useDispatch();
     const location = useLocation();
-    const { loggedUserInfo } = useSelector((state) => state.userProfile);
+    const { loggedUserInfo } = useSelector((state) => state.userProfileReducer);
 
     return (
         <div className="header-login">

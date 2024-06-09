@@ -4,9 +4,9 @@ import {
 } from "./../actionsTypes";
 import { axiosInstance } from "../../utils/Service";
 import { apiUrl } from "../../utils/urlEndpoints";
-
+import _ from "lodash";
 const token = localStorage.getItem("token");
-axiosInstance.defaults.headers.common["Authorization"] = "Bearer " + token;
+// axiosInstance.defaults.headers.common["Authorization"] = "Bearer " + token;
 
 export const getCart = (payload) => {
     return (dispatch) => {
@@ -32,20 +32,20 @@ export const getCart = (payload) => {
 export const deleteCart = (cartid, completion) => {
     return (dispatch) => {
         if (localStorage.getItem("cart") === null) {
-            var cartData = {};
+            var cartData = [];
         } else {
             cartData = JSON.parse(localStorage.getItem("cart"));
         }
 
         if (localStorage.getItem("token") === null) {
             let cartData = JSON.parse(localStorage.getItem("cart"));
-            delete cartData[cartid];
+            _.pull(cartData, { "cartId": cartid });
             localStorage.setItem("cart", JSON.stringify(cartData));
             completion(cartid);
         } else {
             return axiosInstance
                 .post(apiUrl.cart.deleteCart, { cartId: cartid })
-                .then((response) => {
+                .then(() => {
                     completion(cartid);
                 });
         }
@@ -98,31 +98,32 @@ export const addCart = (payload, id, callback) => {
     };
 };
 
-export const updateCart = (id, qty, completion) => {
+export const updateCart = (qty, id, completion) => {
     return (dispatch) => {
         if (localStorage.getItem("cart") === null) {
-            var cartData = {};
+            var cartData = [];
         } else {
             cartData = JSON.parse(localStorage.getItem("cart"));
         }
-
         if (localStorage.getItem("token") === null) {
             let cartData = JSON.parse(localStorage.getItem("cart"));
-            cartData[id].qty = qty;
-            localStorage.setItem("cart", JSON.stringify(cartData));
+            const updatedArray = _.map(cartData, obj =>
+                obj.id === id ? _.set(obj, "quantity", qty) : obj)
+            localStorage.setItem("cart", JSON.stringify(updatedArray));
             completion({ _id: id, Quantity: qty });
-        } else {
+        }
+        else {
             let data = {
                 cartId: id,
                 quantity: qty,
-                save_for_later: false,
             };
             axiosInstance.post(apiUrl.cart.updateCart, data).then((response) => {
-                completion(response.data.data);
+                completion(response.data);
             });
         }
     };
 };
+
 export const updateCartProdQty = (payload, completion) => {
     return axiosInstance
         .post(apiUrl.cart.qtyUpdate, payload)

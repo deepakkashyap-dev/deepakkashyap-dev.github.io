@@ -19,7 +19,7 @@ import { apiUrl } from "../../utils/urlEndpoints";
 import { get, filter as loFilter, sum } from "lodash";
 
 const token = localStorage.getItem("token");
-axiosInstance.defaults.headers.common["Authorization"] = "Bearer " + token;
+// axiosInstance.defaults.headers.common["Authorization"] = "Bearer " + token;
 export const setLoginPopupStatus = (data) => {
     console.log(data,"setLoginPopupStatus")
     return {

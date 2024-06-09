@@ -406,18 +406,22 @@
   padding: 0;
 }
 
-.costume-action {
+.plus-action {
   position: absolute;
-  bottom: 10px;
-  right: 10px;
+  display: flex;
+  width: 100%;
   z-index: 5;
-  background: #fff;
+  bottom: 10px;
+  padding: 0px 15px;
+}
+
+.plus-button {
   border-radius: 40px;
   height: 35px;
   width: 35px;
-  color: #000;
-  padding: 10px 6px;
-  transition: all 0.5s ease 0s;
+  color: #ffffff;
+  background-color: #02B290;
+  margin-left: auto;
 }
 
 .trend-img {
@@ -428,8 +432,8 @@
   box-shadow: 0px 0px 10px rgba(76, 76, 76, 0.28);
 }
 
-.costume-action:hover {
-  background: #f86202;
+.plus-action:hover {
+  cursor: pointer;
 }
 
 .red-heart.icon-wishlist {
@@ -3074,9 +3078,9 @@ input:checked+.slider-round:before {
   font-family: "Roboto";
 }
 
-.old-price {
+.product-price .old-price {
   font-family: "Roboto";
-  font-size: 18px;
+  font-size: 13px;
   color: #a9a9a9;
   text-decoration: line-through;
   font-weight: 400;
@@ -5119,9 +5123,6 @@ select:focus {
   vertical-align: middle;
 }
 
-.check-out-prod-card .cartmenu {
-  align-items: flex-start;
-}
 
 .checkout-total>div {
   margin-bottom: 11px;
@@ -6938,10 +6939,8 @@ select:focus {
 }
 
 .delete-cart-product {
-  position: absolute;
-  top: 13px;
-  right: 13px;
-  width: auto !important;
+  display: flex;
+  flex-direction: column;
 }
 
 .delete-cart-product .delete-product {
@@ -9587,26 +9586,20 @@ button.complete-purchase.disabled {
   background: #f67900;
 }
 
-
 .on-sale {
-  /* color: #f47900; */
   font-size: 22px;
-  /* margin-bottom: 15px; */
-  display: inline-block;
-  position: relative;
+  position: absolute;
+  z-index: 5;
+  left: 0;
 }
 
 .on-sale span {
-  /* display: none; */
   position: absolute;
-  top: -18px;
-  left: 0;
   font-size: 10px;
   white-space: nowrap;
   color: #fff;
   background-color: #02B290;
   padding: 3px 7px;
-  border-radius: 15px;
 }
 
 /* /////////////////  Difresca ////////////////////////////////////// */

@@ -1,13 +1,15 @@
 import { combineReducers } from "redux";
-import userProfile from "./profile";
+import userProfileReducer from "./profile";
 import searchItemInfo from './searchItem';
 import authReducer from "./auth";
-import dashboardInfo from "./dashboard";
+import dashboardInfoReducer from "./dashboard";
+import cart from "./cart";
 const rootReducer = combineReducers({
-    userProfile,
+    userProfileReducer,
     searchItemInfo,
     authReducer,
-    dashboardInfo
+    dashboardInfoReducer,
+    cartReducer: cart,
 });
 
 export default rootReducer;

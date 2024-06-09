@@ -27,7 +27,6 @@ export const GET_CART = "GET_CART";
 
 // ######### Dashboard ###########
 export const SET_DASHBOARD_BLOCK_DATA = "SET_DASHBOARD_BLOCK_DATA";
-export const SET_BANNER_IMAGE_DATA = "SET_BANNER_IMAGE_DATA";
 export const SET_DASHBOARD_PRODUCT_DATA = "SET_DASHBOARD_PRODUCT_DATA";
 export const SAVE_WISHLIST_DATA = "SAVE_WISHLIST_DATA";
 

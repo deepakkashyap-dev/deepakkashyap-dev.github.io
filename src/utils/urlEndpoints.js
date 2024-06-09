@@ -7,7 +7,7 @@ export const apiUrl = {
        
     },
     product: {
-      
+      search:"/product/search"
     },
     category: {
     },
@@ -20,7 +20,10 @@ export const apiUrl = {
     userAddress: { },
     sellItem: { },
     shippingFrom: {  },
-    homepage: { },
+    homepage: {
+        all: "/homepage/all",
+        by_id: "/homepage/block/", //:id
+     },
     attribute: { },
     blog: {  },
     listBlog: {  },

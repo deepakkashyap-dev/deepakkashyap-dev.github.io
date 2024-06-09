@@ -1,32 +1,22 @@
-import React, { useRef } from 'react';
-import Icon, {
-    GiftOutlined, GiftTwoTone,
-    CalendarOutlined, CalendarTwoTone,
-    StarOutlined, StarTwoTone,
-    ShoppingOutlined, ShoppingTwoTone,
-    WechatOutlined, MessageTwoTone
-} from '@ant-design/icons';
+import React, { useRef,useEffect,useState } from 'react';
+import { api_url } from '../../utils/constant';
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { getHomePageBlock_data } from '../../store/actions/dashboard';
+import { useDispatch } from "react-redux";
+import {Link} from 'react-router-dom';
 
-const RenderIcon = (data) => {
-    switch (data.icon_name) {
-        case "gift":
-            return <GiftTwoTone style={{ fontSize: '45px', color: data.icon_color, background: "#fff" }} twoToneColor={data.icon_color} />;
-        case "calendar":
-            return <CalendarTwoTone style={{ fontSize: '45px', color: data.icon_color }} twoToneColor={data.icon_color} />;
-        case "star":
-            return <StarTwoTone style={{ fontSize: '45px', color: data.icon_color }} twoToneColor={data.icon_color} />;
-        case "shopping":
-            return <ShoppingTwoTone style={{ fontSize: '45px', color: data.icon_color }} twoToneColor={data.icon_color} />;
-        case "chat":
-            return <MessageTwoTone style={{ fontSize: '45px', color: data.icon_color }} twoToneColor={data.icon_color} />;
-    }
-}
-
-const StickyBlock = (props) => {
+const StickyBlock = ({data}) => {
     const focusOut = useRef(null);
+    const dispatch = useDispatch();
+    const [stickyData,setStickyData] = useState([]);
+    useEffect(() => {
+        dispatch(getHomePageBlock_data(data.id)).then(res => setStickyData(res))
+        // return () => {
+        //     setStickyData([])
+        // }
+    }, [data])
     var settings = {
         className: "sticky-style",
         // style: { marginRight: "16px" },
@@ -35,9 +25,9 @@ const StickyBlock = (props) => {
         // centerMargin: "60px",
         dots: false,
         infinite: true,
-        speed: 500,
+        speed: 1000,
         arrows: false,
-        slidesToShow: 3,
+        slidesToShow: data.Card_In_A_Row ? parseInt(data.Card_In_A_Row) : 3,
         slidesToScroll: 1,
         autoplay: true,
         responsive: [
@@ -58,32 +48,15 @@ const StickyBlock = (props) => {
         ],
     };
     return (
-        <div className="" style={{ width: "100%" }} >
+        <div style={{ width: "100%" }} >
             <Slider {...settings} ref={focusOut}>
                 {
-                    props.data.data.length > 0 &&
-                    props.data.data.map(d => {
+                    stickyData.length > 0 &&
+                    stickyData.map(d => {
                         return (
-                            <div key={d.id} style={{ width: "30%" }}>
-                                <div className='d-flex' style={{
-                                    background: props.data.background_color,
-                                    margin: "0 7px",
-                                    justifyContent: "center",
-                                    // alignItems: "center"
-                                }} >
-                                    <div className=''>
-                                        <div>
-                                            <p>{d.title}</p>
-                                        </div>
-                                        <div>
-                                            <p>{d.sub_title}</p>
-                                        </div>
-                                    </div>
-                                    <div className='' style={{ background: "#fff" }}>
-                                        {RenderIcon(d)}
-                                    </div>
-                                </div>
-                            </div>
+                            <Link to={d.button_URL} key={d.id}  style={{ width: "30%" }}>
+                                <img className='sticky-bnr' src={api_url + `${d.Banner_image}`} alt={d.Banner_name}  />
+                            </Link>
                         )
                     }
                     )

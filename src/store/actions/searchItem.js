@@ -3,9 +3,9 @@ import {
     SET_SEARCH_ITEM,
     SET_SEARCH_VALUE,
     SET_SEARCH_SELECT_VALUE
-
 } from './../actionsTypes'
-
+import { axiosInstance } from "../../utils/Service";
+import { apiUrl } from "../../utils/urlEndpoints";
 const fruits = [
     {
         name: 'mango',
@@ -47,18 +47,14 @@ const fruits = [
 
 
 export const searchItem = (payload) => {
-    return dispatch => {
-        const inputValue = payload.trim().toLowerCase();
-        const inputLength = inputValue.length;
-        return dispatch(setSearchItem(inputLength === 0 ? ["not"] : fruits.filter(lang =>
-            lang.name.toLowerCase().slice(0, inputLength) === inputValue
-        )))
-        // return inputLength === 0 ?
-        //     dispatch(setSearchItem(["not"])) :
-        //     fruits.filter(lang =>
-        //         lang.name.toLowerCase().slice(0, inputLength) === inputValue
-        //     )
-
+    return async(dispatch) => {
+        const inputLength = payload.length;
+        if(inputLength){
+            const inputValue = payload.trim().toLowerCase();
+            const response = await axiosInstance.post(apiUrl.product.search, { 'keyword': inputValue });
+            return dispatch(setSearchItem(response.data));
+        }
+        return [];
         // axiosInstance.post(apiUrl.homepage.productList, { searchValue: payload, userId })
         //     .then(response => {
         //         if (response.data.data.length === 0) {

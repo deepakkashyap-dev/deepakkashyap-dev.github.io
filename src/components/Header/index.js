@@ -15,14 +15,11 @@ const Header = () => {
     return (
         <header className="header">
             <div className="top-btn" id="scroll-to-top" >
-                {/* <ScrollToTop /> */}
-                <button className="top-link"
-                    onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-                >
+                <button className="top-link" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} >
                     <i className="fal fa-angle-up" />
                 </button>
             </div>
-            <HeadLine />
+            {/* <HeadLine /> */}
             {
                 showLoginPopup && <Auth /> // to render login signup pages
             }

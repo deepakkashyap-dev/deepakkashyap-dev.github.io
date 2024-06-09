@@ -23,7 +23,7 @@ const initialState = {
     networkStatus: ""
 };
 
-const userProfile = (state = initialState, action) => {
+const userProfileReducer = (state = initialState, action) => {
     switch (action.type) {
         case SET_USER_ADDRESS_INFO:
             return { ...state, userAddress: action.payload };
@@ -32,4 +32,4 @@ const userProfile = (state = initialState, action) => {
             return { ...state };
     }
 };
-export default userProfile;
+export default userProfileReducer;
